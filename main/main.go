@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	//"os"
+	"os"
 
 	"github.com/go-sql-driver/mysql"
 )
@@ -21,8 +21,8 @@ type Album struct{
 
 func main() {
 	cfg := mysql.Config{
-		User:   "root",//os.Getenv("DBUSER"),
-		Passwd: "root",	//os.Getenv("DBPASS"),
+		User:   os.Getenv("DBUSER"),
+		Passwd: os.Getenv("DBPASS"),
 		Net:    "tcp",
 		Addr:   "127.0.0.1:3306",
 		DBName: "recordings",
